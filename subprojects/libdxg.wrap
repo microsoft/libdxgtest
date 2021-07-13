@@ -1,0 +1,5 @@
+[wrap-git]
+directory = libdxg
+
+url  = https://github.com/microsoft/libdxg
+revision = head
