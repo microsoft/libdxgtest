@@ -1,14 +1,33 @@
 # Project
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+The goal of this project is to provide an example for how to create/build an application (or a User Mode Driver), which uses the libdxg library https://github.com/microsoft/libdxg and DirectX headers https://github.com/microsoft/DirectX-Headers.
 
-As the maintainer of this project, please make a few updates:
+## Getting started
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+### Directory structure
+
+- /meson.build - Meson build files for inclusion using sub-bproject/wrap.<br>
+- /src/main.cpp - source file for the application. <br>
+- /subprojects/DirectX-Headers.warp - Meson dependency for DirectX headers <br>
+- /subprojects/libdxg.warp - Meson dependency for libdxg library<br>
+
+### Software dependencies
+
+The test application depends on uisng wsl/winadapter.h from https://github.com/microsoft/DirectX-Headers and libdxg library from https://github.com/microsoft/libdxg.
+
+### API references
+
+The WDDM API is described on MSDN https://docs.microsoft.com/en-us/windows-hardware/drivers/ddi/d3dkmthk/
+
+### Ways to consume
+
+- Manually: Just copy the headers somewhere and point your project at them.
+- Meson subproject/wrap: Add this entire project as a subproject of your larger project, and use subproject or dependency to consume it.
+- Pkg-config: Use Meson to build this project and subprojects, and the resulting installed package can be found via pkg-config.
+
+### Build and Test
+
+The Meson build system is used to compile and build the application and dependencies.
 
 ## Contributing
 
@@ -26,8 +45,8 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 
 ## Trademarks
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
-trademarks or logos is subject to and must follow 
+This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft
+trademarks or logos is subject to and must follow
 [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
 Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
 Any use of third-party trademarks or logos are subject to those third-party's policies.
