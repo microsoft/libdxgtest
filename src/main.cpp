@@ -7,7 +7,7 @@
  */
 
 #include <wsl/winadapter.h>
-#include <dxg/d3dkmthk.h>
+#include <d3dkmthk.h>
 #include <stdio.h>
 
 #include "sys/mman.h"
@@ -17,7 +17,7 @@
 #include <stdarg.h>
 #include <string.h>
 #include <wsl/winadapter.h>
-#include <dxg/d3dkmthk.h>
+#include <d3dkmthk.h>
 #include <unistd.h>
 #include <pthread.h>
 #include <poll.h>
